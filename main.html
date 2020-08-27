@@ -7,12 +7,16 @@
 <body>
   <h1>Start Up이란 무엇인가?</h1>
   <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color = 'white';
-  ">
-  <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color = 'black';
+    var target = document.querySelector('body');
+    if(this.value === 'night') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
   ">
   <ol>
     <li>Title</li>
@@ -27,5 +31,6 @@
     We are going to follow design of <a href="https://www.epal.gg/"
     target="_b" title="epal homepage">epal.gg</a>
   </p>
+  
 </body>
 </html>
